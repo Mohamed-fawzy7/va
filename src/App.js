@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import Counter, { mapStateToProps } from "./containers/Counter";
+import {mapDispatchToProps} from "./containers/Controls";
 import CounterSlider from './containers/Slider';
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
 
 class App extends Component {
-    
+    componentDidMount() {
+        document.addEventListener("keydown", (e) => {
+                if(e.ctrlKey && e.key === "ArrowRight"){
+                    this.props.increment(this.props.sliderValue)
+                } else if(e.ctrlKey && e.key === "ArrowLeft"){
+                    this.props.decrement(this.props.sliderValue)
+                }
+        });
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -19,4 +29,4 @@ class App extends Component {
 }
 
 
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

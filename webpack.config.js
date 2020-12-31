@@ -27,6 +27,12 @@ module.exports = {
           presets: ["react", "stage-0", "es2015"],
           plugins: ["transform-class-properties", "transform-decorators-legacy"]
         }
+      },
+      {
+        // Preprocess css files
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader'],
       }
     ]
   },

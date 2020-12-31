@@ -10,7 +10,12 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transition: all .5s;
+    @media (max-width: 779px) {
+        background: #3A9
+    }
 }
+
 .counters{
     display: flex
 }
@@ -25,7 +30,7 @@ body{
   align-items: center;
   margin: 0 50px;
 
-  > div:first-child {
+  > div.counterValue {
     font-size: 100px;
   }
 
