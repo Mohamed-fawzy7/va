@@ -1,27 +1,29 @@
 import { INCREMENT_NUM, DECREMENT_NUM, RESET } from "../constants/ActionTypes";
 
-export function incrementNum(num) {
-    console.log("increment action", num);
+export function incrementNum(amount) {
     return {
         type: INCREMENT_NUM,
         payload: {
-            num
+            amount
         }
     };
 }
 
-export function decrementNum(num) {
+export function decrementNum(amount) {
     return {
         type: DECREMENT_NUM,
         payload: {
-            num
+            amount
         }
     };
 }
 
-export function resetNum(payload) {
+export function resetNum() {
     return {
-        type: RESET
+        type: RESET,
+        payload: {
+            amount: 0
+        }
     };
 }
 

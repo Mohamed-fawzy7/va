@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (store) =>{
     return {
-        sliderCount: store.sliderCount
+        sliderValue: store.sliderValue
     }
 }
 

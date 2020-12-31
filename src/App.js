@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Counter from "./containers/Counter";
+import Counter, { mapStateToProps } from "./containers/Counter";
 import CounterSlider from './containers/Slider';
+import {connect} from 'react-redux'
 
 class App extends Component {
     
@@ -8,8 +9,8 @@ class App extends Component {
         return (
             <React.Fragment>
                 <div className="counters">
-                    <Counter />
-                    <Counter disabled={true} />
+                    <Counter value={this.props.counters.counter1} />
+                    <Counter value={this.props.counters.counter2} disabled={true} />
                 </div>
                 <CounterSlider />
             </React.Fragment>
@@ -17,4 +18,5 @@ class App extends Component {
     }
 }
 
-export default App;
+
+export default connect(mapStateToProps, null)(App);

@@ -1,18 +1,29 @@
 import { INCREMENT_NUM, DECREMENT_NUM, RESET } from "../constants/ActionTypes";
 
-export default function reducer(state = 0, action) {
-    console.log("counter reducer", action.payload)
-    if (action.payload) {
-        console.log(state, action.payload.num)
+let initialState = {
+    counter1: 0,
+    counter2: 0,
+    updates: 0
+}
+
+export default function reducer(state = initialState, action) {
+    let newState = { ...state };
+    if (action.payload && action.payload.amount > -1) {
+        newState.updates++;
     }
     switch (action.type) {
         case INCREMENT_NUM:
-            return state + action.payload.num;
+            newState.counter1 += action.payload.amount;
+            break;
         case DECREMENT_NUM:
-            return state - action.payload.num;
+            newState.counter1 -= action.payload.amount;
+            break;
         case RESET:
-            return 0;
+            newState.counter1 = 0;
+            break;
     }
-
-    return state;
+    if(newState.updates % 10 === 0){
+        newState.counter2 = - newState.counter1;
+    }
+    return newState;
 }

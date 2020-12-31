@@ -5,12 +5,12 @@ import ActionButton from './ActionButton';
  class Controls extends Component {
 
   render() {
-    const { incrementLabel, decrementLabel,resetLabel, increment, decrement, reset, disabled, sliderCount} = this.props;
+    const { incrementLabel, decrementLabel,resetLabel, increment, decrement, reset, disabled, sliderValue} = this.props;
 
     return (
       <div className="controls">
-          <ActionButton label={incrementLabel} action={increment} disabled={disabled} sliderCount={sliderCount}/>
-          <ActionButton label={decrementLabel} action={decrement} disabled={disabled} sliderCount={sliderCount}/>
+          <ActionButton label={incrementLabel} action={increment} disabled={disabled} sliderValue={sliderValue}/>
+          <ActionButton label={decrementLabel} action={decrement} disabled={disabled} sliderValue={sliderValue}/>
           <ActionButton label={resetLabel} action={reset} disabled={disabled}/>
       </div>
     );
