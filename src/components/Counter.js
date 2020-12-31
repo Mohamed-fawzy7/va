@@ -5,18 +5,19 @@ import Controls from "../containers/Controls";
  class Counter extends Component {
   render() {
 
-    const { count } = this.props;
+    const { count, disabled, sliderCount } = this.props;
 
     return (
       <div className="counter">
         <div>{count}</div>
-        <Controls />
+        <Controls disabled={disabled} sliderCount={sliderCount}/>
       </div>
     );
   }
 }
 
 Counter.propTypes = {
+  count: PropTypes.number,
   count: PropTypes.number
 };
 

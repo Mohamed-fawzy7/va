@@ -13,7 +13,8 @@ export class Controller extends Component {
 
 export const mapStateToProps = store => {
   return {
-    count: store.count
+    count: store.count,
+    sliderCount: store.sliderCount
   };
 };
 

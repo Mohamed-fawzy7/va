@@ -4,22 +4,23 @@ import { connect } from "react-redux";
 
 import { incrementNum, decrementNum, resetNum} from "../actions/counterActions";
 
-export class Controller extends Component {
+// export class Controller extends Component {
 
-  render() {
-    return (
-      <Controls {...this.props}/>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <Controls {...this.props}/>
+//     );
+//   }
+// }
 
 export const mapDispatchToProps = dispatch => {
   return {
-    increment: () => {
-      dispatch(incrementNum());
+    increment: (num) => {
+        console.log("mapdispatchtoprops for controls", num);
+      dispatch(incrementNum(num));
     },
-    decrement: () => {
-      dispatch(decrementNum());
+    decrement: (num) => {
+      dispatch(decrementNum(num));
     },
     reset: () => {
         dispatch(resetNum());

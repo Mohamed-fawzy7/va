@@ -9,6 +9,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+.counters{
+    display: flex
+}
+.count-slider{
+    width: 500px;
+    margin-top: 50px;
 }
 .counter {
   display: flex;
@@ -55,8 +63,12 @@ body{
         border-radius: 5px;
         user-select: none;
       }
+      &.disabled-button{
+          background: #AAA;
+          cursor: not-allowed;
+      }
 
-      &.control:hover {
+      &.control:not(.disabled-button):hover {
           background: greenyellow;
           color: #FFF;
       }
